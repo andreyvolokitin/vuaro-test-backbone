@@ -1,0 +1,43 @@
+<tr id="<%=typeof id === 'undefined' ? cid : id%>" class="basket__product">
+    <td>
+        <div class="width3 clearfix">
+            <div class="bl-side width1">
+                <a href="#"><img src="<%=pic%>" alt="" width="70" height="69"/></a>
+            </div>
+            <div class="bl-main">
+                <div class="valign0">
+                    <div class="valign-inner">
+                        <h3 class="bw hd_type_0">
+                            <a href="#"><%=name%></a>
+                            <input class="basket__product-id" name="product" value="<%=typeof id === 'undefined' ? cid : id%>" type="hidden"/>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </td>
+    <td>
+        <div class="width2">
+            <div class="bw basket__product-price">
+                <%=price%>
+            </div>
+        </div>
+    </td>
+    <td>
+        <div class="width0">
+            <div class="input">
+                <input class="input__field basket__product-count num-input" data-id="<%=typeof id === 'undefined' ? cid : id%>" name="q_<%=typeof id === 'undefined' ? cid : id%>" value="<%=quantity%>" type="text">
+            </div>
+        </div>
+    </td>
+    <td>
+        <div class="table__cell_type_rel table__cell">
+            <div class="width5">
+                <div class="bw basket__product-sum">
+                    <%=price*quantity%>
+                </div>
+            </div>
+            <div data-id="<%=typeof id === 'undefined' ? cid : id%>" title="удалить" class="basket__product-delete control_func_del control"></div>
+        </div>
+    </td>
+</tr>

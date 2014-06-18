@@ -1,0 +1,55 @@
+<div class="basket<% if (products.length === 0) { %> <%= ' basket_state_empty' %><% } %>">
+    <div class="gap20 basket__i">
+        <form class="basket__form" action="#">
+            <table class="gap20 table_skin_0 table">
+                <thead>
+                    <tr>
+                        <th>Наименование товара</th>
+                        <th>Цена</th>
+                        <th>Количество</th>
+                        <th>Стоимость</th>
+                    </tr>
+                </thead>
+                <tbody class="basket__src">
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">
+                            Сумма заказа
+                        </td>
+                        <td>
+                            <div class="width5">
+                                <span class="bw basket__total">
+                                  <%=
+                                      _.reduce(products, function(memo, item){
+                                          return memo + (item.price * item.quantity);
+                                      }, 0)
+                                  %>
+                                </span> руб.
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div class="tar">
+                <button type="submit" class="button">
+                    <span class="button__text">Подтвердить покупку</span>
+                </button>
+            </div>
+        </form>
+        <div class="basket__empty-block">
+            Корзина пуста.
+        </div>
+        <div class="basket__submitted-block">
+            Спасибо за покупку! Корзина пуста.
+        </div>
+    </div>
+    <form class="basket__add-unique-product" action="#">
+        <div class="tar">
+            <button type="submit" class="button">
+                <span class="button__text">Добавить случайный продукт</span>
+            </button>
+        </div>
+    </form>
+</div>
